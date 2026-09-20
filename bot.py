@@ -15,6 +15,12 @@ BRAND = "by AFG"
 
 if not TOKEN:
     raise SystemExit("ERROR: DISCORD_TOKEN missing in .env")
+    # DEBUG: Show what token Render is actually passing
+if TOKEN:
+    print(f"[DEBUG] Token length: {len(TOKEN)}")
+    print(f"[DEBUG] Token starts with: {TOKEN[:10]}...")
+    print(f"[DEBUG] Token ends with: ...{TOKEN[-10:]}")
+    print(f"[DEBUG] First char code: {ord(TOKEN[0])}, Last char code: {ord(TOKEN[-1])}")
 
 intents = discord.Intents.default()
 intents.message_content = True
